@@ -10,3 +10,6 @@
 User.create(name: "Merryn", email:"Merrynsemail@gmails.com", subject: "indonesian culture")
 User.create(name: "Zsuzsanna", email:"Zsuzsannasemail@gmails.com", subject: "cooking")
 User.create(name: "Mike", email:"Mike@gmails.com", subject: "music")
+
+
+Member.create(email: "test@testy.com", password: "123456", password_confirmation: "123456")

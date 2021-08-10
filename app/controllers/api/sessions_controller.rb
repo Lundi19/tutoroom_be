@@ -1,4 +1,4 @@
-class V1::SessionsController << ApplicationController
+class Api::SessionsController < ApplicationController
   def create
     member = Member.where(email: params[:email]).first
 
