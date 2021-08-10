@@ -338,3 +338,124 @@ ActionController::RoutingError (No route matches [GET] "/api/session"):
   [1m[36mMember Create (1.6ms)[0m  [1m[32mINSERT INTO "members" ("email", "encrypted_password", "created_at", "updated_at", "authentication_token") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "test@testy.com"], ["encrypted_password", "$2a$12$R.8L8TMqvHTu5mELXpzf2uvqzTS.Zs8zgQtMIvUnf0r3z/axb4bnq"], ["created_at", "2021-08-10 17:54:32.187557"], ["updated_at", "2021-08-10 17:54:32.187557"], ["authentication_token", "BGPBS6VME2DExseKZZg8"]]
   [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
   [1m[36mMember Load (1.2ms)[0m  [1m[34mSELECT "members".* FROM "members" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/api/session" for ::1 at 2021-08-10 20:36:15 +0200
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/api/session"):
+  
+Started GET "/api/session" for ::1 at 2021-08-10 20:36:18 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/api/session"):
+  
+Started GET "/api/session/:id" for ::1 at 2021-08-10 20:37:49 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/api/session/:id"):
+  
+Started GET "/api/session/:id" for ::1 at 2021-08-10 20:38:04 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/api/session/:id"):
+  
+Started GET "/api/session/:id" for ::1 at 2021-08-10 20:48:42 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/api/session/:id"):
+  
+Started POST "/api/session" for ::1 at 2021-08-10 20:48:52 +0200
+  
+ActionController::RoutingError (No route matches [POST] "/api/session"):
+  
+Started POST "/api/sessions" for ::1 at 2021-08-10 20:56:55 +0200
+Processing by Api::SessionsController#create as */*
+  [1m[36mMember Load (5.7ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."email" IS NULL ORDER BY "members"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/sessions_controller.rb:3:in `create'
+Completed 401 Unauthorized in 144ms (ActiveRecord: 56.0ms | Allocations: 6918)
+
+
+Started POST "/api/sessions" for ::1 at 2021-08-10 20:59:09 +0200
+Processing by Api::SessionsController#create as */*
+  [1m[36mMember Load (0.8ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."email" IS NULL ORDER BY "members"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/sessions_controller.rb:3:in `create'
+Completed 401 Unauthorized in 11ms (ActiveRecord: 0.8ms | Allocations: 639)
+
+
+Started POST "/api/sessions" for ::1 at 2021-08-10 20:59:47 +0200
+Processing by Api::SessionsController#create as */*
+  [1m[36mMember Load (6.7ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."email" IS NULL ORDER BY "members"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/sessions_controller.rb:3:in `create'
+Completed 401 Unauthorized in 15ms (ActiveRecord: 6.7ms | Allocations: 614)
+
+
+Started GET "/api/sessions" for ::1 at 2021-08-10 21:01:04 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/api/sessions"):
+  
+Started POST "/api/sessions" for ::1 at 2021-08-10 21:02:50 +0200
+Processing by Api::SessionsController#create as */*
+  [1m[36mMember Load (0.5ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."email" IS NULL ORDER BY "members"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/sessions_controller.rb:3:in `create'
+Completed 401 Unauthorized in 53ms (ActiveRecord: 36.4ms | Allocations: 2068)
+
+
+Started GET "/api/sessions" for ::1 at 2021-08-10 21:04:12 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/api/sessions"):
+  
+Started POST "/api/sessions" for ::1 at 2021-08-10 21:04:17 +0200
+  
+SyntaxError (/Users/mike/Desktop/Makers/final_project/tutorapp/tutor_backend/tutor_backend/app/controllers/api/sessions_controller.rb:15: syntax error, unexpected `end', expecting end-of-input):
+  
+app/controllers/api/sessions_controller.rb:15: syntax error, unexpected `end', expecting end-of-input
+app/controllers/api/sessions_controller.rb:15: syntax error, unexpected `end', expecting end-of-input
+Started POST "/api/sessions" for ::1 at 2021-08-10 21:04:56 +0200
+Processing by Api::SessionsController#create as */*
+  [1m[36mMember Load (0.4ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."email" IS NULL ORDER BY "members"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/sessions_controller.rb:3:in `create'
+Completed 201 Created in 19ms (Views: 0.2ms | ActiveRecord: 11.3ms | Allocations: 2100)
+
+
+Started POST "/api/sessions?email=%22test@test.com%22&password=[FILTERED]" for ::1 at 2021-08-10 21:06:27 +0200
+Processing by Api::SessionsController#create as */*
+  Parameters: {"email"=>"\"test@test.com\"", "password"=>"[FILTERED]"}
+  [1m[36mMember Load (1.1ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."email" = $1 ORDER BY "members"."id" ASC LIMIT $2[0m  [["email", "\"test@test.com\""], ["LIMIT", 1]]
+  ↳ app/controllers/api/sessions_controller.rb:3:in `create'
+Completed 201 Created in 27ms (Views: 6.1ms | ActiveRecord: 1.1ms | Allocations: 651)
+
+
+Started POST "/api/sessions" for ::1 at 2021-08-10 21:07:50 +0200
+Processing by Api::SessionsController#create as */*
+  [1m[36mMember Load (1.5ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."email" IS NULL ORDER BY "members"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/sessions_controller.rb:3:in `create'
+Completed 201 Created in 16ms (Views: 0.4ms | ActiveRecord: 1.5ms | Allocations: 641)
+
+
+Started POST "/api/sessions?email=%22test@test.com%22" for ::1 at 2021-08-10 21:08:22 +0200
+Processing by Api::SessionsController#create as */*
+  Parameters: {"email"=>"\"test@test.com\""}
+  [1m[36mMember Load (11.0ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."email" = $1 ORDER BY "members"."id" ASC LIMIT $2[0m  [["email", "\"test@test.com\""], ["LIMIT", 1]]
+  ↳ app/controllers/api/sessions_controller.rb:3:in `create'
+Completed 201 Created in 26ms (Views: 0.4ms | ActiveRecord: 11.0ms | Allocations: 668)
+
+
+Started POST "/api/sessions?email=test@test.com&password=[FILTERED]" for ::1 at 2021-08-10 21:38:00 +0200
+Processing by Api::SessionsController#create as */*
+  Parameters: {"email"=>"test@test.com", "password"=>"[FILTERED]"}
+  [1m[36mMember Load (2.4ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."email" = $1 ORDER BY "members"."id" ASC LIMIT $2[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/sessions_controller.rb:3:in `create'
+Completed 201 Created in 425ms (Views: 0.2ms | ActiveRecord: 35.0ms | Allocations: 8460)
+
+
+Started POST "/api/sessions?email=testy@test.com&password=[FILTERED]" for ::1 at 2021-08-10 21:38:17 +0200
+Processing by Api::SessionsController#create as */*
+  Parameters: {"email"=>"testy@test.com", "password"=>"[FILTERED]"}
+  [1m[36mMember Load (0.7ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."email" = $1 ORDER BY "members"."id" ASC LIMIT $2[0m  [["email", "testy@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/sessions_controller.rb:3:in `create'
+Completed 401 Unauthorized in 7ms (ActiveRecord: 0.7ms | Allocations: 620)
+
+
+Started POST "/api/sessions?email=testt@test.com&password=[FILTERED]" for ::1 at 2021-08-10 21:38:30 +0200
+Processing by Api::SessionsController#create as */*
+  Parameters: {"email"=>"testt@test.com", "password"=>"[FILTERED]"}
+  [1m[36mMember Load (1.1ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."email" = $1 ORDER BY "members"."id" ASC LIMIT $2[0m  [["email", "testt@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/sessions_controller.rb:3:in `create'
+Completed 201 Created in 296ms (Views: 0.2ms | ActiveRecord: 1.1ms | Allocations: 753)
+
+
