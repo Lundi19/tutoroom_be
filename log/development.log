@@ -122,3 +122,29 @@ Migrating to AddAuthenticationTokenToMembers (20210810163352)
   [1m[35m (6.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "members" WHERE "members"."authentication_token" = $1[0m  [["authentication_token", "DrdcACH48St4GKPqPA5U"]]
   [1m[36mMember Create (4.3ms)[0m  [1m[32mINSERT INTO "members" ("email", "encrypted_password", "created_at", "updated_at", "authentication_token") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "testt@test.com"], ["encrypted_password", "$2a$12$UPFbFwNBmvKHHj.8aWE66OQ5lfbHgXnWvgXpSbqvW35iKrp4gwP9G"], ["created_at", "2021-08-10 16:40:25.854666"], ["updated_at", "2021-08-10 16:40:25.854666"], ["authentication_token", "DrdcACH48St4GKPqPA5U"]]
   [1m[36mTRANSACTION (6.9ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/api/users" for ::1 at 2021-08-10 19:03:33 +0200
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::UsersController#index as HTML
+  [1m[36mUser Load (6.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/users_controller.rb:8:in `index'
+Completed 200 OK in 12ms (Views: 1.3ms | ActiveRecord: 6.2ms | Allocations: 2827)
+
+
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (4.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "subject", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Merryn"], ["email", "Merrynsemail@gmails.com"], ["subject", "indonesian culture"], ["created_at", "2021-08-10 17:03:56.969535"], ["updated_at", "2021-08-10 17:03:56.969535"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "subject", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Zsuzsanna"], ["email", "Zsuzsannasemail@gmails.com"], ["subject", "cooking"], ["created_at", "2021-08-10 17:03:56.977365"], ["updated_at", "2021-08-10 17:03:56.977365"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "subject", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Mike"], ["email", "Mike@gmails.com"], ["subject", "music"], ["created_at", "2021-08-10 17:03:56.979607"], ["updated_at", "2021-08-10 17:03:56.979607"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/api/users" for ::1 at 2021-08-10 19:04:08 +0200
+  [1m[35m (6.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::UsersController#index as HTML
+  [1m[36mUser Load (4.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/users_controller.rb:8:in `index'
+Completed 200 OK in 20ms (Views: 5.0ms | ActiveRecord: 11.1ms | Allocations: 6405)
+
+
