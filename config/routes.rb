@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :members
   namespace :api do
       resources :users
   end
