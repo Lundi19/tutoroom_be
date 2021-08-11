@@ -10,6 +10,12 @@ class Api::SessionsController < ApplicationController
   end
 
   def destroy
+    current_member&.authentication_token = nil
+    if current_member.save
+      head(:ok)
+    else
+      head(:unauthorized)
+    end
   end
 
 end
