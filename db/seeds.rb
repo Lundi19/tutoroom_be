@@ -10,3 +10,4 @@
 User.create(name: "Merryn", email:"Merrynsemail@gmails.com", subject: "indonesian culture")
 User.create(name: "Zsuzsanna", email:"Zsuzsannasemail@gmails.com", subject: "cooking")
 User.create(name: "Mike", email:"Mike@gmails.com", subject: "music")
+
