@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :members
+  scope :api, defaults: { format: :json } do
+    devise_for :members, controllers: { sessions: :sessions },
+                         path_names: { sign_in: :login }
+  end
+  
   namespace :api do
       resources :users
   end
